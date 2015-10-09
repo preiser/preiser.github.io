@@ -1,2 +1,0 @@
-# minimalcss
-Minimal CSS Framework
