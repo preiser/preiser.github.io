@@ -73,10 +73,9 @@
       </section>
       <div class="docs-section" id="aboutme">
          <h4 class="docs-header">About Me</h4>
-         <p>I am a photographer based in Hendersonville, NC.</p>
-         <p>While the majority of my work has been for private and residential commission, I also work regularly with editorial and commercial clients to realize their photographic vision. My style and attitude is natural and straight-forward. I strive to
-            create strong and unique images that stand on their own.</p>
-         <p> I also co-own the WNC Acupuncture clinic with my lovely and fearless wife Kristine Preiser, and we live in Hendersonville with our two year old daughter and eight year old Shanti-dog.</p>
+         <p>I am a web developer working out of Asheville, NC.</p>
+         <p>While the majority of my work has been for individual clients, I also work regularly with commercial clients to make their presence truly felt on the web.</p>
+         <p> I also own the WNC Acupuncture clinic with my wife Kristine Preiser, and we live in Hendersonville with our four year old daughter and 9 year old Shanti-dog.</p>
          <img class="inline" src="images/me.jpg">
       </div>
       <div class="docs-section" id="webdesign">
@@ -89,7 +88,27 @@
    <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
    <script>
       $('.header').children('h4').css('color', '#F44336');
-      $('.container').hide().fadeIn(1200);
+      $('.value-props').hide().fadeIn(1400);
+      $(function() {
+         $(window).scroll(function() {
+            $('.inline').each(function(i) {
+
+               var bottom_of_object = $(this).position().top + $(this).outerHeight();
+               var bottom_of_window = $(window).scrollTop() + $(window).height();
+
+               bottom_of_window = bottom_of_window + 1000;
+
+               if (bottom_of_window > bottom_of_object) {
+
+                  $(this).animate({
+                     'opacity': '1'
+                  }, 2100);
+
+               }
+            });
+
+         });
+      });
    </script>
 
    <!-- End Document

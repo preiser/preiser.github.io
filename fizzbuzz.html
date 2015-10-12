@@ -14,20 +14,15 @@
       <h1 class="header">What's so special about 3 and 5 anyway???</h1>
       <h4 class="header">Pick your own fizzbuzz numbers, how very fun!</h4>
       <div class="docs-section">
-         <form>
-            <div class="row">
-               <label>Pick your first number:</label>
-               <input id="usrnum1" class="u-full-width" type="number">
-            </div>
-            <div class="row">
-               <label>Pick your second number:</label>
-               <input id="usrnum2" class="u-full-width" type="number">
-            </div>
-            <input class="button-primary" type="submit" value="Submit"/>
-         <!-- <script>
-         var usrnum1 = document.getElementsById("usrnum1")[0].value;
-         var usrnum2 = document.getElementsById("usrnum2")[0].value;
-         </script> -->
+         <form id="form" name="usrChoices">
+
+            <label>Pick your first number:</label>
+            <input class="u-full-width" type="number" id="usrchoice1" name="usrchoice1" />
+
+            <label>Pick your second number:</label>
+            <input class="u-full-width" type="number" id="usrchoice2" name="usrchoice2" />
+
+            <input class="button-primary" type="submit" value="Submit" value="Submit Form" />
          </form>
       </div>
 
@@ -38,25 +33,33 @@
       <script type="text/javascript">
          var counter = 1;
          var string;
-         var usrnum1 = document.getElementsById("usrnum1")[0].value;
-         var usrnum2 = document.getElementsById("usrnum2")[0].value;
+
+         // function myFunction() {
+         //    document.getElementById("form").submit();
+         // }
+
+         var usrchoice1 = document.getElementById("usrchoice1").value;
+         var usrchoice2 = document.getElementById("usrchoice2").value;
 
          while (counter <= 100) {
             string = "";
-            if (counter % usrnum1 === 0 && counter % usrnum2 === 0) {
+            if (counter % usrchoice1 === 0 && counter % usrchoice2 === 0) {
                string = '<div class="fizzbuzz">fizzbuzz</div>';
-            } else if (counter % usrnum2 === 0) {
+            } else if (counter % usrchoice1 === 0) {
                string = '<div class="buzz">buzz</div>';
-            } else if (counter % usrnum1 === 0) {
+            } else if (counter % usrchoice2 === 0) {
                string = '<div class="fizz">fizz</div>';
             } else {
                string = '<div>' + counter + '</div>';
             }
-            document.querySelector('#usrNums').textContent = "You chose " + usrnum1 + " & " + usrnum2 + ".";
+            document.querySelector('#usrNums').textContent = "You chose " + usrchoice1 + " & " + usrchoice2 + ".";
             document.querySelector('#fizzy').innerHTML += string;
 
             counter++;
          }
+
+         console.log(usrchoice1);
+         console.log(usrchoice2);
       </script>
    </div>
 </body>

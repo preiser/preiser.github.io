@@ -66,6 +66,7 @@
    margin-bottom: 0;
 }
 .inline {
+   opacity:0;
    display: block;
    width: 75%;
    margin-top: 50px;
