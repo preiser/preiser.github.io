@@ -72,14 +72,14 @@
          </div>
       </section>
       <div class="docs-section" id="aboutme">
-         <h4 class="docs-header">About Me</h4>
+         <h3 class="docs-header">About Me</h3>
          <p>I am a web developer working out of Asheville, NC.</p>
          <p>While the majority of my work has been for individual clients, I also work regularly with commercial clients to make their presence truly felt on the web.</p>
          <p> I also own the WNC Acupuncture clinic with my wife Kristine Preiser, and we live in Hendersonville with our four year old daughter and 9 year old Shanti-dog.</p>
          <img class="inline" src="images/me.jpg">
       </div>
       <div class="docs-section" id="webdesign">
-         <h4 class="docs-header">Web Design</h4>
+         <h3 class="docs-header">Web Design</h3>
       </div>
    </div>
 
@@ -89,6 +89,7 @@
    <script>
       $('.header').children('h4').css('color', '#F44336');
       $('.value-props').hide().fadeIn(1400);
+      $('')
       $(function() {
          $(window).scroll(function() {
             $('.inline').each(function(i) {
@@ -102,7 +103,7 @@
 
                   $(this).animate({
                      'opacity': '1'
-                  }, 2100);
+                  }, 1800);
 
                }
             });
