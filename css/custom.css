@@ -17,22 +17,16 @@
    margin-bottom: 4rem;
 }
 .navbar, .navbar-spacer {
-   text-align: center;
    display: block;
-   width: 100%;
+   width: 104%;
    height: 6.5rem;
    background: #fff;
-   z-index: 99;
    margin-top: 5rem;
    border-top: 1px solid #eee;
    border-bottom: 1px solid #eee;
 }
 .navbar-spacer {
    display: none;
-}
-#nav-align {
-   text-align: center;
-   width: 100%;
 }
 .navbar > .container {
    width: 75%;
@@ -51,7 +45,7 @@
    font-size: 12px;
    font-weight: 600;
    letter-spacing: .2rem;
-   margin-right: 35px;
+   margin-right: 39px;
    text-decoration: none;
    line-height: 6.5rem;
    color: #222;
@@ -61,7 +55,7 @@
 }
 .docs-header {
    text-transform: uppercase;
-   font-size: 1.7rem;
+   font-size: 1.5rem;
    letter-spacing: .2rem;
    font-weight: 600;
 }
