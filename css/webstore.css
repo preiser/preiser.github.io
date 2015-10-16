@@ -1,16 +1,24 @@
 .header {
-   margin-top: 6rem;
+   margin-top: 8rem;
    text-align: center;
 }
 .value-img {
    display: block;
    text-align: center;
-   margin: 2.5rem auto 0;
-   height: 150px;
-   width: 150px;
+   margin: 2.5rem auto;
+   height: 270px;
+   width: 180px;
+}
+.value-img-album {
+   display: block;
+   text-align: center;
+   margin: 2.5rem auto;
+   height: 180px;
+   width: 180px;
 }
 .value-prop {
    margin-top: 1rem;
+   text-align: center;
 }
 .value-props {
    margin-top: 4rem;
