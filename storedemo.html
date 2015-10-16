@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+   <!-- Basic Page Needs
+   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+   <meta charset="utf-8">
+   <title>Matthew Preiser | Web Developer</title>
+   <meta name="description" content="">
+   <meta name="author" content="">
+
+   <!-- Mobile Specific Metas
+   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+   <!-- FONT
+   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+   <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+   <link href='https://fonts.googleapis.com/css?family=Vollkorn:400,700' rel='stylesheet' type='text/css'>
+
+   <!-- CSS
+   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+   <link rel="stylesheet" href="styles/normalize.css">
+   <link rel="stylesheet" href="styles/skeleton.css">
+   <link rel="stylesheet" href="styles/webstore.css">
+
+   <!-- Favicon
+   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+   <!-- <link rel="icon" type="image/png" href="images/favicon.png"> -->
+
+</head>
+
+<body>
+
+   <!-- Primary Page Layout
+     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+   <div class="container">
+      <section class="header">
+         <h1>Hackathon 2015</h1>
+         <h4>Web Store Demo</h4>
+         <div class="navbar-spacer"></div>
+         <nav class="navbar">
+            <div class="container">
+               <ul class="navbar-list">
+                  <li class="navbar-item"><a class="navbar-link" href="/index.html">Home</a></li>
+                  <li class="navbar-item"><a class="navbar-link" href="#bookstore">Book Store</a></li>
+                  <li class="navbar-item"><a class="navbar-link" href="#musicstore">Music Store</a></li>
+               </ul>
+            </div>
+         </nav>
+      </section>
+      <div id="bookstore" class="header">
+         <h3>Book Store</h3>
+      </div>
+      <div class="value-props row">
+         <div id="meditations" class="one-half column value-prop"></div>
+         <div id="ontheroad" class="one-half column value-prop"></div>
+      </div>
+
+      <div id="musicstore" class="header">
+         <h3>Music Store</h3>
+      </div>
+      <div class="value-props row">
+         <div id="blues" class="one-half column value-prop">
+            <h5 class="name">Blues</h5>
+            <h6 class="author">by Jimi Hendrix</h6>
+            <img class="value-img-album" src="images/blues.jpg">
+            <h6 class="price">$9.99</h6>
+            <p>The pinnacle of electric guitar blues.</p>
+         </div>
+         <div id="koln" class="one-half column value-prop">
+            <h5 class="name">Koln Concert</h5>
+            <h6 class="author">by Keith Jarrett</h6>
+            <img class="value-img-album" src="images/koln.jpg">
+            <h6 class="price">$9.99</h6>
+            <p>The pinnacle of electric guitar blues.</p>
+         </div>
+      </div>
+   </div>
+
+   <!-- javascript
+     _________________________________________________ -->
+   <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
+   <script>
+
+      var book1 = {
+         id: "meditations",
+         className: "one-half column value-prop",
+         category: "book",
+         name: '<h5 class="name">Meditations</h5>',
+         author: '<h6 class="author">by Marcus Aurelius</h6>',
+         image: '<img class="value-img" src="images/meditations.jpg">',
+         price: '<h6 class="price">$33,000</h6>',
+         points: ["This is a classic from one of the great philosopher kings."]
+      }
+      var book2 = {
+         id : "ontheroad",
+         className : "one-half column value-prop",
+         category: "book",
+         name: '<h5 class="name">On the Road</h5>',
+         author: '<h6 class="author">by Jack Kerouak</h6>',
+         image: '<img class="value-img" src="images/ontheroad.jpg">',
+         price: '<h6 class="price">$17,000</h6>',
+         points: ["One of my favorite books to read when I feel lost."]
+      }
+      var album1 = {
+         category: "music",
+         name: "Blues",
+         author: "Jimi Hendrix",
+         price: 9.99,
+         points: ["The pinnacle of electric guitar blues."]
+      }
+      var album2 = {
+         category: "music",
+         name: "Live at the Koln",
+         author: "Keith Jarrett",
+         price: 9.99,
+         points: ["Improvisational genius on the piano."]
+      }
+
+      $('#meditations').html(book1.name);
+      $('#meditations').append(book1.author);
+      $('#meditations').append(book1.image);
+      $('#meditations').append(book1.price);
+      $('#meditations').append(book1.points);
+
+      $('#ontheroad').html(book2.name);
+      $('#ontheroad').append(book2.author);
+      $('#ontheroad').append(book2.image);
+      $('#ontheroad').append(book2.price);
+      $('#ontheroad').append(book2.points);
+
+   </script>
+
+</body>
+
+</html>
