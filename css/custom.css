@@ -98,3 +98,16 @@
 #fizzy {
    text-align: center;
 }
+.u-full-width {
+   width: 60%;
+   box-sizing: border-box;
+}
+.container-fizz {
+   position:relative;
+   text-align: center;
+   width: 75%;
+   max-width: 960px;
+   margin: auto;
+   padding: 0 20px;
+   box-sizing: border-box;
+}

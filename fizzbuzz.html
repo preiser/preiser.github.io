@@ -10,53 +10,53 @@
 </head>
 
 <body>
-   <div class="container">
+   <div class="container-fizz">
       <h1 class="header">What's so special about 3 and 5 anyway???</h1>
       <h4 class="header">Pick your own fizzbuzz numbers, how very fun!</h4>
-      <div class="docs-section">
+      <div id="input" class="docs-section">
          <form id="form" name="usrChoices">
 
             <label>Pick your first number:</label>
-            <input class="u-full-width" type="number" id="usrchoice1" name="usrchoice1" />
+            <input class="u-full-width" type="number" id="usrchoice1" />
 
             <label>Pick your second number:</label>
-            <input class="u-full-width" type="number" id="usrchoice2" name="usrchoice2" />
-
-            <input class="button-primary" type="submit" value="Submit" />
+            <input class="u-full-width" type="number" id="usrchoice2" />
          </form>
+
+         <input id="submit" class="button-primary" type="submit" value="Submit" href="#" />
+
       </div>
 
       <div id="usrNums"></div>
       <br>
       <div id="fizzy"></div>
 
-      <script type="text/javascript">
+      <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
+      <script>
          var counter = 1;
          var string;
+         var cloneDiv = $('#input').clone();
 
-         // function myFunction() {
-         //    document.getElementById("form").submit();
-         // }
-
-         var usrchoice1 = document.getElementById("usrchoice1").value;
-         var usrchoice2 = document.getElementById("usrchoice2").value;
-
-         while (counter <= 100) {
-            string = "";
-            if (counter % usrchoice1 === 0 && counter % usrchoice2 === 0) {
-               string = '<div class="fizzbuzz">fizzbuzz</div>';
-            } else if (counter % usrchoice1 === 0) {
-               string = '<div class="buzz">buzz</div>';
-            } else if (counter % usrchoice2 === 0) {
-               string = '<div class="fizz">fizz</div>';
-            } else {
-               string = '<div>' + counter + '</div>';
+         $('#submit').click(function() {
+            var usrchoice1 = document.getElementById("usrchoice1").value;
+            var usrchoice2 = document.getElementById("usrchoice2").value;
+            while (counter <= 100) {
+               string = "";
+               if (counter % usrchoice1 === 0 && counter % usrchoice2 === 0) {
+                  string = '<div class="fizzbuzz">fizzbuzz</div>';
+               } else if (counter % usrchoice1 === 0) {
+                  string = '<div class="buzz">buzz</div>';
+               } else if (counter % usrchoice2 === 0) {
+                  string = '<div class="fizz">fizz</div>';
+               } else {
+                  string = '<div>' + counter + '</div>';
+               }
+               $('#usrNums').html('You chose ' + usrchoice1 + ' & ' + usrchoice2 + '.');
+               $('#fizzy').append(string);
+               counter++;
+               $('#input').replaceWith(cloneDiv);
             }
-            document.querySelector('#usrNums').textContent = "You chose " + usrchoice1 + " & " + usrchoice2 + ".";
-            document.querySelector('#fizzy').innerHTML += string;
-
-            counter++;
-         }
+         });
 
          console.log(usrchoice1);
          console.log(usrchoice2);
