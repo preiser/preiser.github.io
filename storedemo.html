@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+   <!-- Basic Page Needs
+   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+   <meta charset="utf-8">
+   <title>Matthew Preiser | Web Developer</title>
+   <meta name="description" content="">
+   <meta name="author" content="">
+
+   <!-- Mobile Specific Metas
+   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+   <!-- FONT
+   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+   <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+   <link href='https://fonts.googleapis.com/css?family=Vollkorn:400,700' rel='stylesheet' type='text/css'>
+
+   <!-- CSS
+   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+   <link rel="stylesheet" href="styles/normalize.css">
+   <link rel="stylesheet" href="styles/skeleton.css">
+   <link rel="stylesheet" href="styles/webstore.css">
+
+   <!-- Favicon
+   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+   <!-- <link rel="icon" type="image/png" href="images/favicon.png"> -->
+
+</head>
+
+<body>
+
+   <!-- Primary Page Layout
+     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+   <div class="container">
+      <section class="header">
+         <h1>Hackathon 2015</h1>
+         <h4>Web Store Demo</h4>
+         <div class="navbar-spacer"></div>
+         <nav class="navbar">
+            <div class="container">
+               <ul class="navbar-list">
+                  <li class="navbar-item"><a class="navbar-link" href="/storedemo.html">Home</a></li>
+                  <li class="navbar-item"><a id="bookstorenav" class="navbar-link" href="#">Books</a></li>
+                  <li class="navbar-item"><a id="musicstorenav" class="navbar-link" href="#">Albums</a></li>
+                  <li class="navbar-item"><a id="showall" class="navbar-link" href="#">Show All</a></li>
+               </ul>
+            </div>
+         </nav>
+      </section>
+      <div id="welcome" class="docs-section-center">
+         <h3>Welcome to the Demo</h3>
+         <p>This is the web shop project from the Hack Reactor Remote Prep course. Playing around with Javascript and jQuery.</p>
+      </div>
+      <div class="main">
+      <section id="bookstore" class="body">
+         <div class="header">
+            <h3>Book Store</h3>
+         </div>
+         <div class="value-props row">
+            <div id="meditations" class="one-half column value-prop"></div>
+            <div id="ontheroad" class="one-half column value-prop"></div>
+         </div>
+      </section>
+
+      <section id="musicstore" class="body">
+         <div class="header">
+            <h3>Music Store</h3>
+         </div>
+         <div class="value-props row">
+            <div id="blues" class="one-half column value-prop"></div>
+            <div id="koln" class="one-half column value-prop"></div>
+         </div>
+      </section>
+   </div>
+
+   </div>
+
+   <!-- javascript
+     _________________________________________________ -->
+   <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
+   <script>
+      var book1 = {
+         id: "meditations",
+         className: "one-half column value-prop",
+         category: "book",
+         name: '<h5 class="name">Meditations</h5>',
+         author: '<h6 class="author">by Marcus Aurelius</h6>',
+         image: '<img class="value-img" src="images/meditations.jpg">',
+         price: '<h6 class="price">$33,000</h6>',
+         points: ["This is a classic from one of the great philosopher kings."]
+      }
+      var book2 = {
+         id: "ontheroad",
+         className: "one-half column value-prop",
+         category: "book",
+         name: '<h5 class="name">On the Road</h5>',
+         author: '<h6 class="author">by Jack Kerouak</h6>',
+         image: '<img class="value-img" src="images/ontheroad.jpg">',
+         price: '<h6 class="price">$17,000</h6>',
+         points: ["One of my favorite books to read when I feel lost."]
+      }
+      var album1 = {
+         id: "blues",
+         className: "one-half column value-prop",
+         category: "music",
+         name: '<h5 class="name">Blues</h5>',
+         author: '<h6 class="author">Jimi Hendrix</h6>',
+         image: '<img class="value-img-album" src="images/blues.jpg">',
+         price: '<h6 class="price">$9.99</h6>',
+         points: ["The pinnacle of electric guitar blues."]
+      }
+      var album2 = {
+         id: "koln",
+         className: "one-half column value-prop",
+         category: "music",
+         name: '<h5 class="name">Live at the Koln</h5>',
+         author: '<h6 class="author">Keith Jarrett</h6>',
+         image: '<img class="value-img-album" src="images/koln.jpg">',
+         price: '<h6 class="price">$9.99</h6>',
+         points: ["Improvisational genius on the piano."]
+      }
+
+      var booksArr = [book1, book2];
+      var albumArr = [album1, album2];
+
+      // for (var i = 0; i < booksArr.length; i++) {
+      //    array[i];
+      // }
+
+      var add_to_page = function(divId, object) {
+         $(divId).hide().fadeIn(1800);
+         $(divId).html(object.name);
+         $(divId).append(object.author);
+         $(divId).append(object.image);
+         $(divId).append(object.price);
+         $(divId).append(object.points);
+      };
+
+      // var catalog = function()
+
+      var hide_div = function(divId) {
+         $(divId).hide();
+      };
+
+      var show_div = function(divId) {
+         $(divId).hide().fadeIn(1800);
+      };
+
+      add_to_page('#meditations', booksArr[0]);
+      add_to_page('#ontheroad', booksArr[1]);
+      add_to_page('#blues', albumArr[0]);
+      add_to_page('#koln', albumArr[1]);
+
+      console.log(booksArr);
+
+      $('#welcome').show();
+      $('#bookstore').hide();
+      $('#musicstore').hide();
+
+      $('#bookstorenav').click(function() {
+         $('#welcome').hide();
+         show_div('#bookstore');
+         hide_div('#musicstore');
+      });
+
+      $('#musicstorenav').click(function() {
+         $('#welcome').hide();
+         show_div('#musicstore');
+         hide_div('#bookstore');
+      });
+
+      $('#showall').click(function() {
+         $('#welcome').hide();
+         show_div('#musicstore');
+         show_div('#bookstore');
+      });
+
+   </script>
+
+</body>
+
+</html>

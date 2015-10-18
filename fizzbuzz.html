@@ -30,38 +30,71 @@
       <div id="usrNums"></div>
       <br>
       <div id="fizzy"></div>
-
-      <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
-      <script>
-         var counter = 1;
-         var string;
-         var cloneDiv = $('#input').clone();
-
-         $('#submit').click(function() {
-            var usrchoice1 = document.getElementById("usrchoice1").value;
-            var usrchoice2 = document.getElementById("usrchoice2").value;
-            while (counter <= 100) {
-               string = "";
-               if (counter % usrchoice1 === 0 && counter % usrchoice2 === 0) {
-                  string = '<div class="fizzbuzz">fizzbuzz</div>';
-               } else if (counter % usrchoice1 === 0) {
-                  string = '<div class="buzz">buzz</div>';
-               } else if (counter % usrchoice2 === 0) {
-                  string = '<div class="fizz">fizz</div>';
-               } else {
-                  string = '<div>' + counter + '</div>';
-               }
-               $('#usrNums').html('You chose ' + usrchoice1 + ' & ' + usrchoice2 + '.');
-               $('#fizzy').append(string);
-               counter++;
-               $('#input').replaceWith(cloneDiv);
-            }
-         });
-
-         console.log(usrchoice1);
-         console.log(usrchoice2);
-      </script>
    </div>
+   <div class="container-code">
+      <h4 class="header">Here is the code for this silly project:</h4>
+      <pre class="code-example">
+         <code id="code-example-body prettyprint">
+            var counter = 1;
+            var string;
+            var cloneDiv = $('#input').clone();
+            
+            $('#submit').click(function() {
+               var usrchoice1 = document.getElementById("usrchoice1").value;
+               var usrchoice2 = document.getElementById("usrchoice2").value;
+               while (counter <= 100) {
+                  string = "";
+                  if (counter % usrchoice1 === 0 && counter % usrchoice2 === 0)
+                  {
+                     string = '&lt;div class="fizzbuzz"&gt;fizzbuzz&lt;/div&gt;';
+                  } else if (counter % usrchoice1 === 0) {
+                     string = '&lt;div class="buzz"&gt;buzz&lt;/div&gt;';
+                  } else if (counter % usrchoice2 === 0) {
+                     string = '&lt;div class="fizz"&gt;fizz&lt;/div&gt;';
+                  } else {
+                     string = '&lt;div&gt;' + counter + '&lt;/div&gt;';
+                  }
+                  $('#usrNums').html('You chose ' + usrchoice1 + ' & ' + usrchoice2
+                  + '.');
+                  $('#fizzy').append(string);
+                  counter++;
+                  $('#input').replaceWith(cloneDiv);
+               }
+            });
+         </code>
+      </pre>
+   </div>
+   <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
+   <script>
+      var counter = 1;
+      var string;
+      var cloneDiv = $('#input').clone();
+
+      $('#submit').click(function() {
+         var usrchoice1 = document.getElementById("usrchoice1").value;
+         var usrchoice2 = document.getElementById("usrchoice2").value;
+         while (counter <= 100) {
+            string = "";
+            if (counter % usrchoice1 === 0 && counter % usrchoice2 === 0) {
+               string = '<div class="fizzbuzz">fizzbuzz</div>';
+            } else if (counter % usrchoice1 === 0) {
+               string = '<div class="buzz">buzz</div>';
+            } else if (counter % usrchoice2 === 0) {
+               string = '<div class="fizz">fizz</div>';
+            } else {
+               string = '<div>' + counter + '</div>';
+            }
+            $('#usrNums').html('You chose ' + usrchoice1 + ' & ' + usrchoice2 + '.');
+            $('#fizzy').append(string);
+            counter++;
+            $('#input').replaceWith(cloneDiv);
+         }
+      });
+
+      console.log(usrchoice1);
+      console.log(usrchoice2);
+   </script>
+
 </body>
 
 </html>

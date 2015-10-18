@@ -105,9 +105,28 @@
 .container-fizz {
    position:relative;
    text-align: center;
-   width: 75%;
-   max-width: 960px;
+   width: 60%;
+   max-width: 800px;
    margin: auto;
    padding: 0 20px;
    box-sizing: border-box;
+}
+.container-code {
+   position:relative;
+   text-align: left;
+   width: 60%;
+   max-width: 800px;
+   margin: auto;
+   padding: 0 20px;
+   box-sizing: border-box;
+}
+.code-example {
+    margin-top: 1.5rem;
+    margin-bottom: 0;
+}
+
+.code-example-body {
+    white-space: pre;
+    word-wrap: break-word
+    text-align:left;
 }
