@@ -26,10 +26,11 @@
          <input id="submit" class="button-primary" type="submit" value="Submit" href="#" />
 
       </div>
-
       <div id="usrNums"></div>
-      <br>
-      <div id="fizzy"></div>
+      <div class="value-props row">
+         <div id="fizzy1" class="one-half column value-prop"></div>
+         <div id="fizzy2" class="one-half column value-prop"></div>
+      </div>
    </div>
    <div class="container-code">
       <h4 class="header">Here is the code for this silly project:</h4>
@@ -38,7 +39,7 @@
             var counter = 1;
             var string;
             var cloneDiv = $('#input').clone();
-            
+
             $('#submit').click(function() {
                var usrchoice1 = document.getElementById("usrchoice1").value;
                var usrchoice2 = document.getElementById("usrchoice2").value;
@@ -73,19 +74,23 @@
       $('#submit').click(function() {
          var usrchoice1 = document.getElementById("usrchoice1").value;
          var usrchoice2 = document.getElementById("usrchoice2").value;
-         while (counter <= 100) {
+         while (counter <= 50) {
             string = "";
             if (counter % usrchoice1 === 0 && counter % usrchoice2 === 0) {
                string = '<div class="fizzbuzz">fizzbuzz</div>';
             } else if (counter % usrchoice1 === 0) {
-               string = '<div class="buzz">buzz</div>';
-            } else if (counter % usrchoice2 === 0) {
                string = '<div class="fizz">fizz</div>';
+            } else if (counter % usrchoice2 === 0) {
+               string = '<div class="buzz">buzz</div>';
             } else {
                string = '<div>' + counter + '</div>';
             }
             $('#usrNums').html('You chose ' + usrchoice1 + ' & ' + usrchoice2 + '.');
-            $('#fizzy').append(string);
+            if (counter <=25) {
+               $('#fizzy1').append(string);
+            }  else {
+               $('#fizzy2').append(string);
+            }
             counter++;
             $('#input').replaceWith(cloneDiv);
          }
