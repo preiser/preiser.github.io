@@ -12,7 +12,7 @@
    <nav class="navbar">
       <div class="nav">
          <ul class="navbar-list">
-            <li class="navbar-item"><a id="asheville" class="navbar-link" href="#">Asheville</a></li>
+            <li class="navbar-item"><a id="nyc" class="navbar-link" href="#">New York City</a></li>
             <li class="navbar-item"><a id="tampa" class="navbar-link" href="#">Tampa</a></li>
             <li class="navbar-item"><a id="sandiego" class="navbar-link" href="#">San Diego</a></li>
          </ul>
@@ -40,26 +40,28 @@
 
    };
 
-   $('#asheville').click(function() {
-      $.get('http://api.openweathermap.org/data/2.5/weather?q=Asheville&units=imperial&APPID=93b03ba103c6cabec96f47a6f650769e').success(to_be_run_on_server_response);
-      show_div('#asheville');
-      hide_div('#tampa');
-      hide_div('#sandiego');
-   });
+   var click_handler = function(divId, city){
+      $(divId).click(function() {
+         $.get('http://api.openweathermap.org/data/2.5/weather?q=' + 'city' + '&units=imperial&APPID=93b03ba103c6cabec96f47a6f650769e').success(to_be_run_on_server_response);
+      })
+   };
 
-   $('#tampa').click(function() {
-      $.get('http://api.openweathermap.org/data/2.5/weather?q=Tampa&units=imperial&APPID=93b03ba103c6cabec96f47a6f650769e').success(to_be_run_on_server_response);
-      show_div('#london');
-      hide_div('#asheville');
-      hide_div('#sandiego');
-   });
+   click_handler('#tampa', tampa);
+   // click_handler('#nyc', asheville);
+   // click_handler('#sandiego', sandiego);
 
-   $('#sandiego').click(function() {
-      $.get('http://api.openweathermap.org/data/2.5/weather?q=SanDiego&units=imperial&APPID=93b03ba103c6cabec96f47a6f650769e').success(to_be_run_on_server_response);
-      show_div('#sandiego');
-      hide_div('#asheville');
-      hide_div('#tampa');
-   });
+
+   // $('#nyc').click(function() {
+   //    $.get('http://api.openweathermap.org/data/2.5/weather?id=5128581&units=imperial&APPID=93b03ba103c6cabec96f47a6f650769e').success(to_be_run_on_server_response);
+   // });
+   //
+   // $('#tampa').click(function() {
+   //    $.get('http://api.openweathermap.org/data/2.5/weather?q=Tampa&units=imperial&APPID=93b03ba103c6cabec96f47a6f650769e').success(to_be_run_on_server_response);
+   // });
+   //
+   // $('#sandiego').click(function() {
+   //    $.get('http://api.openweathermap.org/data/2.5/weather?q=SanDiego&units=imperial&APPID=93b03ba103c6cabec96f47a6f650769e').success(to_be_run_on_server_response);
+   // });
 
    </script>
 </body>

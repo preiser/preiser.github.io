@@ -137,22 +137,13 @@
       var add_to_page = function(divId, array) {
          for (var i = 0; i < array.length; i++) {
             console.log(array[i]);
-            $(divId).html(array[i].name);
+            $(divId).append(array[i].name);
             $(divId).append(array[i].author);
             $(divId).append(array[i].image);
             $(divId).append(array[i].price);
             $(divId).append(array[i].points);
          }
-         // add_to_page(divId, array);
       };
-
-      // var test = function(array) {
-      //    for (var i = 0; i < array.length; i++) {
-      //       console.log(array[i]);
-      //    }
-      // }
-
-      // test(booksArr);
 
       var hide_div = function(divId) {
          $(divId).hide();
