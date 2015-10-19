@@ -56,26 +56,26 @@
          <p>This is the web shop project from the Hack Reactor Remote Prep course. Playing around with Javascript and jQuery.</p>
       </div>
       <div class="main">
-      <section id="bookstore" class="body">
-         <div class="header">
-            <h3>Book Store</h3>
-         </div>
-         <div class="value-props row">
-            <div id="meditations" class="one-half column value-prop"></div>
-            <div id="ontheroad" class="one-half column value-prop"></div>
-         </div>
-      </section>
+         <section id="bookstore" class="body">
+            <div class="header">
+               <h3>Book Store</h3>
+            </div>
+            <div class="value-props row">
+               <div id="bookstore-body" class="value-prop"></div>
+               <!-- <div id="ontheroad" class="one-half column value-prop"></div> -->
+            </div>
+         </section>
 
-      <section id="musicstore" class="body">
-         <div class="header">
-            <h3>Music Store</h3>
-         </div>
-         <div class="value-props row">
-            <div id="blues" class="one-half column value-prop"></div>
-            <div id="koln" class="one-half column value-prop"></div>
-         </div>
-      </section>
-   </div>
+         <section id="musicstore" class="body">
+            <div class="header">
+               <h3>Music Store</h3>
+            </div>
+            <div class="value-props row">
+               <div id="musicstore-body" class="value-prop"></div>
+               <!-- <div id="koln" class="one-half column value-prop"></div> -->
+            </div>
+         </section>
+      </div>
 
    </div>
 
@@ -127,20 +127,32 @@
       var booksArr = [book1, book2];
       var albumArr = [album1, album2];
 
-      // for (var i = 0; i < booksArr.length; i++) {
-      //    array[i];
-      // }
+      var products = {
+         books: booksArr,
+         albums: albumArr
+      }
 
-      var add_to_page = function(divId, object) {
-         $(divId).hide().fadeIn(1800);
-         $(divId).html(object.name);
-         $(divId).append(object.author);
-         $(divId).append(object.image);
-         $(divId).append(object.price);
-         $(divId).append(object.points);
+      console.log(products);
+
+      var add_to_page = function(divId, array) {
+         for (var i = 0; i < array.length; i++) {
+            console.log(array[i]);
+            $(divId).hide().fadeIn(1800);
+            $(divId).html(array[i].name);
+            $(divId).append(array[i].author);
+            $(divId).append(array[i].image);
+            $(divId).append(array[i].price);
+            $(divId).append(array[i].points);
+         }
       };
 
-      // var catalog = function()
+      // var test = function(array) {
+      //    for (var i = 0; i < array.length; i++) {
+      //       console.log(array[i]);
+      //    }
+      // }
+
+      // test(booksArr);
 
       var hide_div = function(divId) {
          $(divId).hide();
@@ -150,12 +162,8 @@
          $(divId).hide().fadeIn(1800);
       };
 
-      add_to_page('#meditations', booksArr[0]);
-      add_to_page('#ontheroad', booksArr[1]);
-      add_to_page('#blues', albumArr[0]);
-      add_to_page('#koln', albumArr[1]);
-
-      console.log(booksArr);
+      add_to_page('#bookstore-body', booksArr);
+      add_to_page('#musicstore-body', albumArr);
 
       $('#welcome').show();
       $('#bookstore').hide();
@@ -178,7 +186,6 @@
          show_div('#musicstore');
          show_div('#bookstore');
       });
-
    </script>
 
 </body>

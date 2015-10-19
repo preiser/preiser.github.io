@@ -74,6 +74,8 @@
       $('#submit').click(function() {
          var usrchoice1 = document.getElementById("usrchoice1").value;
          var usrchoice2 = document.getElementById("usrchoice2").value;
+         console.log(usrchoice1);
+         console.log(usrchoice2);
          while (counter <= 50) {
             string = "";
             if (counter % usrchoice1 === 0 && counter % usrchoice2 === 0) {
@@ -96,8 +98,6 @@
          }
       });
 
-      console.log(usrchoice1);
-      console.log(usrchoice2);
    </script>
 
 </body>
