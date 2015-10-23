@@ -137,5 +137,5 @@ h4 {
    color: #F44336;
 }
 #bookstore-body{
-   height: 600px;
+   /*display:inline-flex;*/
 }
